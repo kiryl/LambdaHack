@@ -35,7 +35,7 @@ defaultAttr :: Attr
 defaultAttr = (Color.defFG, Color.defBG)
 
 isBright :: Color -> Bool
-isBright c = fromEnum c > 7  -- for terminals that display bright via bold
+isBright c = c > White  -- for terminals that display bright via bold
 
 -- | Due to limitation of curses, only these are legal backgrounds.
 legalBG :: [Color]
