@@ -49,7 +49,7 @@ rollAssocs key flavours rnd =
 dungeonAssocs :: Rnd Assocs
 dungeonAssocs =
   liftM fst $
-  M.foldWithKey rollAssocs (return (M.empty, S.fromList stdFlav)) itemFlavours
+  M.foldrWithKey rollAssocs (return (M.empty, S.fromList stdFlav)) itemFlavours
 
 getFlavour :: Assocs -> ItemKindId -> Flavour
 getFlavour assocs ik =
